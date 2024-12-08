@@ -48,23 +48,23 @@ const Hero = () => {
         <div className='text-xs'>
           <Image src='/gearup1.png' alt='men' width={300} height={10}></Image>
           <p><strong>Nike Dri-FIT ADV Techknit Ultra &nbsp; &nbsp; <span>&#8377;3 895</span></strong></p>
-          <p>Men&apos's Short-Sleeve</p>
+          <p>Men&apos;s Short-Sleeve</p>
           <p>Running Top</p>
         </div>
         <div>
           <Image src='/gearup2.png' alt='men' width={300} height={10}></Image>
           <p><strong>Nike Dri-FIT Challenger &nbsp; &nbsp; <span>&#8377;2 495</span></strong></p>
-          <p>Men&apos's 18cm (approx) 2- <br /> in-1 Versatile Shorts</p>
+          <p>Men&apos;s 18cm (approx) 2- <br /> in-1 Versatile Shorts</p>
         </div>
         <div>
           <Image src='/gearup3.png' alt='women' width={300} height={10}></Image>
           <p><strong>Nike Dri-FIT ADV Run Division &nbsp; &nbsp; <span>&#8377;5 295</span></strong></p>
-          <p>Women&apos's Long-Sleeve <br /> Running Top</p>
+          <p>Women&apos;s Long-Sleeve <br /> Running Top</p>
         </div>
         <div>
           <Image src='/gearup4.png' alt='women' width={300} height={10}></Image>  
           <p><strong>Nike Fast &nbsp; &nbsp; &nbsp; &nbsp; <span>&#8377;3 795</span></strong></p>
-          <p>Women&apos's Mid-Rise 7/8 Running <br /> Legging with Pockets</p>
+          <p>Women&apos;s Mid-Rise 7/8 Running <br /> Legging with Pockets</p>
         </div>
       </div>
       </section>

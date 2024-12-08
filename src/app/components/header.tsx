@@ -17,7 +17,7 @@ const Header = () => {
       </div>
     <nav className='flex justify-between items-center mt-5'>
         <Image src='/logo.png' alt='logo' width={58} height={20}></Image>       
-        <ul className='gap-5 font-semibold hidden md:flex'>
+        <ul className='gap-5 font-semibold xs:hidden md:flex'>
             <li>New & Featured</li>
             <li>Men</li>
             <li>Women</li>
