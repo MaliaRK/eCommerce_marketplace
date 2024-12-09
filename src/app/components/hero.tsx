@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
 
 const Hero = () => {
   return (
-    <div className='max-w-[1440px] mx-auto mt-[20%] md:mt-[15%]'>
+    <div className='max-w-[1440px] mx-auto mt-[20%] md:mt-[10%]'>
       <div className='max-w-[1344px] mx-auto bg-[#cccccc] text-center py-1 my-1'>
           <h3><strong>Hello Nike APP</strong></h3>
           <p>Download the apps to access everything Nike. <strong><u>Get Your Great</u></strong></p>
