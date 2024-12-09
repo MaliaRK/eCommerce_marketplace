@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
 
 const Hero = () => {
   return (
-    <div className='max-w-[1440px] mx-auto mt-[15%]'>
+    <div className='max-w-[1440px] mx-auto mt-[20%] md:mt-[15%]'>
       <div className='max-w-[1344px] mx-auto bg-[#cccccc] text-center py-1 my-1'>
           <h3><strong>Hello Nike APP</strong></h3>
           <p>Download the apps to access everything Nike. <strong><u>Get Your Great</u></strong></p>
@@ -24,9 +24,9 @@ const Hero = () => {
         <Carousel className='my-4'>
           <CarouselContent>
             <CarouselItem className='md:flex gap-5 item-center'>
-              <Image src='/airmax1.png' alt='shoe' width={441} height={441}></Image>
-              <Image src='/airmax1.png' alt='shoe' width={441} height={441}></Image>
-              <Image src='/airmax2.png' alt='shoe' width={441} height={441}></Image>
+              <Image src='/airmax1.png' alt='shoe' width={441} height={441} className='mx-auto'></Image>
+              <Image src='/airmax1.png' alt='shoe' width={441} height={441} className='mx-auto'></Image>
+              <Image src='/airmax2.png' alt='shoe' width={441} height={441} className='mx-auto'></Image>
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious className='absolute md:left-[92%] -top-6  before:content-["shop"]'/>
@@ -35,8 +35,8 @@ const Hero = () => {
       </section>
       <section className='max w-[1344px] mx-auto my-[8%]'>
         <h3 className='mb-2'><strong>Featured</strong></h3>
-        <Image src='/boy.png' alt='boy' width={1344} height={700} className='w-[441px] md:w-[1344px]'></Image>
-        <div className='text-center my-4'>
+        <Image src='/boy.png' alt='boy' width={1344} height={700} className='mx-auto'></Image>
+        <div className='text-center mx-auto my-4'>
           <h3 className='text-2xl'><strong>STEP INTO HAT FEELS GOOD</strong></h3>
           <p className='my-4'>Cause everyone should know the feeling of running in this perfect pair.</p>
           <button className='bg-black text-white rounded-full px-4 py-1 mx-4'>Find Your Shoe</button>
@@ -70,8 +70,8 @@ const Hero = () => {
       </section>
       <section className='max w-[1344px] mx-auto my-[8%]'>
         <h3 className='mb-2'><strong>Don&apos;s Miss</strong></h3>
-        <Image src='/dontmis.png' alt='men' width={1344} height={700} className='w-[441px] md:w-[1344px]'></Image>
-        <div className='text-center my-8'>
+        <Image src='/dontmis.png' alt='men' width={1344} height={700} className='mx-auto'></Image>
+        <div className='text-center mx-auto my-8'>
           <h3 className='text-2xl'><strong>FLIGHT ESSENTIALS</strong></h3>
           <p className='my-4 text-xs'>Your built-to-last, all-week wears--but with style only Jordan Brand can deliver.</p>
           <button className='bg-black text-white rounded-full px-4 py-1 mx-4'>Shop</button>
@@ -80,11 +80,11 @@ const Hero = () => {
       <section className='max w-[1344px] mx-auto my-[8%]'>
         <h3 className='mb-2'><strong>The Essentials</strong></h3>
         <div className='md:flex gap-5'>
-          <Image src='/essential1.png' alt='essential' width={440} height={10} className='my-2 md:my-0'></Image>
-          <Image src='/essential2.png' alt='essential' width={440} height={10} className='my-2 md:my-0'></Image>
-          <Image src='/essential3.png' alt='essential' width={440} height={10} className='my-2 md:my-0'></Image>     
+          <Image src='/essential1.png' alt='essential' width={440} height={10} className='my-2 mx-auto'></Image>
+          <Image src='/essential2.png' alt='essential' width={440} height={10} className='my-2 mx-auto'></Image>
+          <Image src='/essential3.png' alt='essential' width={440} height={10} className='my-2 mx-auto'></Image>     
         </div>
-        <div className='text-center my-4'>
+        <div className='text-center mx-auto my-4'>
           <ul className='flex justify-center gap-32'>
             <li>Icons</li>
             <li>Shoes</li>
