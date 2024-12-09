@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Checkout = () => {
   return (
-    <div className='max-w-[1500px] mx-[20%] my-[10%] flex justify-between'>
+    <div className='max-w-[1500px] mx-auto my-[10%] flex justify-between'>
         <div className='mr-10'>
             <h3><strong>How would you like to get your order?</strong></h3>
             <p className='my-4 text-xs'>Custom regulation for india require a copy of the

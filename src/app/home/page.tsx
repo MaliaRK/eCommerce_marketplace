@@ -3,7 +3,7 @@ import Hero from '../components/hero'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className='max-w-[1500px] mx-auto'>
         <Hero/>
     </div>
   )

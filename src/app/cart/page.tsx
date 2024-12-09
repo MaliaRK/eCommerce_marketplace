@@ -1,9 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Cart = () => {
   return (
-    <div className='max-w-[1500px]'>
+    <div className='max-w-[1500px] mx-auto'>
       <div className='mx-[10%] my-[4%] grid grid-cols-[70%_auto]'>
         <div>
           <div>
@@ -52,7 +53,7 @@ const Cart = () => {
           <p>Subtotal &nbsp; &nbsp; &nbsp; &#8377;20 890.00</p>
           <p>Estimated Delivery & Handling &nbsp; &nbsp; Free</p>
           <p className='my-4'>Total &nbsp; &nbsp; &nbsp; &#8377;20 890.00</p>
-          <button className='bg-black text-white rounded-full px-8 py-1 my-3'>Member Checkout</button>
+          <Link href='./checkout' target='_blank'><button className='bg-black text-white rounded-full px-8 py-1 my-3'>Member Checkout</button></Link>
         </div>
       </div>
       <div className='ml-[10%]'>

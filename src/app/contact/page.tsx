@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Contact = () => {
   return (
-    <div className='max-w-[1500px] mx-[10%] my-[4%] grid grid-cols-[80%_auto] '>
+    <div className='max-w-[1500px] mx-auto my-[4%] grid grid-cols-[80%_auto] '>
       <div>
         <h3 className='text-2xl mx-[20%] text-center'><strong>GET HELP</strong></h3>
         <p className='mx-[30%] flex items center justify-between rounded-md border-[1px] border-[#cccccc] '>

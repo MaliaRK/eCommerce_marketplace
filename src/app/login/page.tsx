@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Login = () => {
   return (
-    <div className='max-w-[1500px] mx-[30%] text-[#cccccc]'>
+    <div className='max-w-[1500px] mx-auto text-[#cccccc]'>
         <Image src='/logo.png' alt='logo' width={58} height={20} className='mx-auto'></Image>       
         <h3 className='text-2xl mx-[20%] text-center text-black'><strong>YOUR ACCOUNT FOR EVERYTHING NIKE</strong></h3>
         <p><input type="email" placeholder='Email address' className='my-6 rounded-md outline-[#b6afaf] pr-64' /></p>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const JoinUs = () => {
   return (
-    <div className='max-w-[1500px] mx-[30%] text-[#cccccc]'>
+    <div className='max-w-[1500px] mx-auto text-[#cccccc]'>
         <Image src='/logo.png' alt='logo' width={58} height={20} className='mx-auto'></Image>       
         <h3 className='text-2xl mx-[20%] text-center text-black'><strong>BECOME A NIKE MEMBER</strong></h3>
         <p className='mx-[10%] my-6 text-center'>Create your Nike Member profile and get first access to the very best of Nike products, inspiration and community.</p>

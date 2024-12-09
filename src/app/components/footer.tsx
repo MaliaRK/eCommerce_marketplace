@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -18,8 +19,8 @@ const Footer = () => {
                 <li className='mt-3'>Delivery</li>
                 <li className='mt-3'>Returns</li>
                 <li className='mt-3'>Paymets Options</li>
-                <li className='mt-3'>Contact Us On Nike.com Inquiries</li>
-                <li className='mt-3'>Contact Us On All Other Inquiries</li>
+                <Link href='./footer' target='_blank'><li className='mt-3'>Contact Us On Nike.com Inquiries</li></Link>
+                <Link href='./footer' target='_blank'><li className='mt-3'>Contact Us On All Other Inquiries</li></Link>
             </ul>
             <ul className='text-xs text-[#cccccc]'>
                 <li className='mt-3 text-normal text-white'>ABOUT NIKE</li>
