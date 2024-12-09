@@ -6,7 +6,7 @@ import ProductDetail from './productDetail/page';
 
 const Page = () => {
   return (
-    <div>
+    <div className='max-w-[1440px] mx-auto'>
       <HomePage/>
       <Products/>
       <ProductDetail/>
