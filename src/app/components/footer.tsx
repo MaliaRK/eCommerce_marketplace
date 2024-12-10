@@ -37,7 +37,7 @@ const Footer = () => {
             </ul>        
         </div>
         <div className='md:flex justify-between items-center mt-[8%] mx-5'>
-            <div className='flex gap-2'>
+            <div className='flex justify-around gap-2'>
                 <Image src='/location.png' alt='location' width={20} height={10}></Image>
                 <p>India &nbsp; &nbsp; &copy; 2023 Nike, Inc. All Right Reserved</p>
             </div>

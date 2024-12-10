@@ -1,5 +1,5 @@
 import React from 'react'
-// import HomePage from './home/page';
+import HomePage from './home/page';
 // import Products from './products/page';
 // import ProductDetail from './productDetail/page';
 
@@ -7,7 +7,7 @@ import React from 'react'
 const Page = () => {
   return (
     <div className='max-w-[1440px] mx-auto'>
-      {/* <HomePage/> */}
+      <HomePage/>
       {/* <Products/>
       <ProductDetail/> */}
     </div>
