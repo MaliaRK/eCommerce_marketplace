@@ -31,7 +31,7 @@ const Header = () => {
             <input type='text' placeholder='Search' className='bg-transparent border-none outline-none' />
           </div>
           <Image src='/wishlist.png' alt='wishlist' width={36} height={36}></Image>
-          <Link href='./cart' target='_blank'><Image src='/bag.png' alt='bag' width={50} height={50} className='md:w-10'></Image></Link>
+          <Link href='./cart' target='_blank'><Image src='/bag.png' alt='bag' width={50} height={50} className='w-12 md:w-10'></Image></Link>
         </div>
         <Sheet>
           <SheetTrigger className='block md:hidden mr-2'>Menu</SheetTrigger>
