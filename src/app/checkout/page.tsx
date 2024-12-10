@@ -14,17 +14,17 @@ const Checkout = () => {
                 officials) for all orders and returns. If your KYC does not match your shipping address, please click
                 the link for more information. <u>Learn More</u>
             </p>
-            <button className='flex gap-3 py-2 px-28 border-[1px] border-black rounded-md '>
+            <button className='flex gap-3 items-center py-2 px-6 md:px-28 border-[1px] border-black rounded-md '>
                 <Image src='/deliver.png' alt='deliver' width={24} height={20} className='mx-auto'></Image>
                 <p>Delivet It</p>
             </button>
             <h3 className='mt-5'><strong>Enter your name and address:</strong></h3>
-            <p><input type='text' placeholder='First Name' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
-            <p><input type='text' placeholder='Last Name' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
-            <p><input type='text' placeholder='Address Line 1' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
+            <p><input type='text' placeholder='First Name' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
+            <p><input type='text' placeholder='Last Name' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
+            <p><input type='text' placeholder='Address Line 1' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
             <p className='text-xs'>we do not ship to P.O boxes</p>
-            <p><input type='text' placeholder='Address Line 2' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
-            <p><input type='text' placeholder='Address Line 3' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
+            <p><input type='text' placeholder='Address Line 2' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
+            <p><input type='text' placeholder='Address Line 3' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
             <p><input type='text' placeholder='Postal Code' className='my-4 mr-4 border-[#cccccc] border-[1px] outline-none p-1  text-center rounded-md' />
             <input type='text' placeholder='Locality' className='my-4  border-[#cccccc] border-[1px] outline-none p-1 text-center rounded-md' /></p>
             <p><input type='text' placeholder='State/Territory' className='my-4 mr-4 border-[#cccccc] border-[1px] outline-none p-1 text-center rounded-md' />
@@ -32,18 +32,18 @@ const Checkout = () => {
             <p>◻ Save this address to my profile</p>
             <p className='my-4'>◻ Make this my preferred address</p>
             <h3><strong>What&apos;s your contact information?</strong></h3>
-            <p><input type='email' placeholder='Email' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
+            <p><input type='email' placeholder='Email' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
             <p>A confirmation email will be sent after checkout</p>
-            <p><input type='tel' placeholder='Phone Number' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
+            <p><input type='tel' placeholder='Phone Number' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
             <p>A carrier might contact you to confirm delivery.</p>
             <h3><strong>What&apos;s your PAN?</strong></h3>
-            <p><input type='text' placeholder='PAN' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 pr-36 rounded-md' /></p>
+            <p><input type='text' placeholder='PAN' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
             <p>Enter your PAN to enable payment with UPI, Net Banking or local card methods</p>
             <p>◻ Save PAN details to Nike Profile</p>
             <p className='mt-10'>◻ I have read and consent to aShopWorld processing my information
                 in accordance with the <u>Privacy Statement</u> and <u>Cookie Policy</u>. eShopWorld
                 is a trusted Nike partner. </p>
-            <button className='bg-[#cccccc] px-32 py-1 mx-4 my-6 rounded-full'>Continue</button>
+            <button className='bg-[#cccccc] px-16 md:px-32 py-1 md:mx-4 my-6 rounded-full'>Continue</button>
             <hr/>
             <h3 className='my-4'><strong>Delivery</strong></h3>
             <hr/>
