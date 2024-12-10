@@ -5,7 +5,7 @@ import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 
 const Header = () => {
   return (
-    <div className='max-w-[1500px] mx-auto'>
+    <div className='max-w-[1440px] mx-auto'>
       <div className='flex justify-between bg-[#cccccc] p-2 '>
           <Image src='/human.png' alt='human' width={24} height={24}></Image>
           <ul className='flex items-center font-light'>
@@ -31,18 +31,27 @@ const Header = () => {
             <input type='text' placeholder='Search' className='bg-transparent border-none outline-none' />
           </div>
           <Image src='/wishlist.png' alt='wishlist' width={36} height={36}></Image>
-          <Link href='./cart' target='_blank'><Image src='/bag.png' alt='bag' width={40} height={40}></Image></Link>
+          <Link href='./cart' target='_blank'><Image src='/bag.png' alt='bag' width={36} height={36} className='w-11 md:w-10'></Image></Link>
         </div>
         <Sheet>
-          <SheetTrigger className='block md:hidden'>Menu</SheetTrigger>
+          <SheetTrigger className='block md:hidden mr-2'>Menu</SheetTrigger>
           <SheetContent>
               <ul className='font-light'>
+                <li>Home</li>
                 <li>New & Featured</li>
                 <Link href='./products' target='_blank'><li>Men</li></Link>
                 <Link href='./products' target='_blank'><li>Women</li></Link>
                 <li>Kids</li>
                 <li>Sale</li>
                 <li className='font-semibold'>SNKRS</li>
+                <li>cart</li>
+                <li>Checkout</li>
+                <li>Contact</li>
+                <li>Products</li>
+                <li>Product Details</li>
+                <li>Join us</li>
+                <li>Ligin</li>
+                <li>Sale</li>
               </ul>
           </SheetContent>
         </Sheet>

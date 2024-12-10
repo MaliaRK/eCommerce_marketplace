@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <div className='max-w-[1440px] mx-auto mt-5 py-5 bg-black text-white'>
-        <div className='grid grid-cols-2 gap-y-10 md:flex justify-between itms-center mx-[8%] my-5'>
+        <div className='grid grid-cols-2 gap-10 md:flex justify-between itms-center mx-[8%] my-5'>
             <ul>
                 <li className='mt-3'>FIMD A STORE</li>
                 <li className='mt-3'>BECOME A MEMBER</li>
@@ -37,7 +37,7 @@ const Footer = () => {
             </ul>        
         </div>
         <div className='md:flex justify-between items-center mt-[8%] mx-5'>
-            <div className='flex gap-2 justify-center'>
+            <div className='flex gap-2'>
                 <Image src='/location.png' alt='location' width={20} height={10}></Image>
                 <p>India &nbsp; &nbsp; &copy; 2023 Nike, Inc. All Right Reserved</p>
             </div>
