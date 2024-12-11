@@ -8,7 +8,7 @@ import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 const Products = () => {
   return (
     <div className='max-w-[1440px] mx-auto'>
-      <div className='flex justify-between mx-10'>
+      <div className='flex justify-between mx-2 md:mx-10'>
         <h3 className='hidden md:block'><strong>New (500)</strong></h3>
         <Sheet>
           <SheetTrigger className='block md:hidden'><strong>New (500) 👈</strong></SheetTrigger>

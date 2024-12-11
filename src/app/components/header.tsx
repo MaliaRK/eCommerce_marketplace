@@ -9,10 +9,10 @@ const Header = () => {
       <div className='flex justify-between bg-[#cccccc] p-2 '>
           <Image src='/human.png' alt='human' width={24} height={24}></Image>
           <ul className='flex items-center font-light'>
-              <Link href='./home'><li className='border-r-2 border-black px-2'>Home</li></Link>
-              <Link href='./products'><li className='border-r-2 border-black px-2'>Find a Store</li></Link>
-              <Link href='./contact'><li className='border-r-2 border-black px-2'>Help</li></Link>
-              <Link href='./joinUs'><li className='border-r-2 border-black px-2'>Join Us</li></Link>
+              <Link href='./home'><li className='border-r-2 border-black px-1 md:px-2'>Home</li></Link>
+              <Link href='./products'><li className='border-r-2 border-black px-1 md:px-2'>Find a Store</li></Link>
+              <Link href='./contact'><li className='border-r-2 border-black px-1 md:px-2'>Help</li></Link>
+              <Link href='./joinUs'><li className='border-r-2 border-black px-1 md:px-2'>Join Us</li></Link>
               <Link href='./login'><li className='px-2'>Sign In</li></Link>
           </ul>
       </div>
