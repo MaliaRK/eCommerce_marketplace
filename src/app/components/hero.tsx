@@ -22,15 +22,44 @@ const Hero = () => {
       <section className='mt-[5%]'>
         <h3 className='mb-2 mx-auto'><strong>Best of Air Max</strong></h3>
         <Carousel>
-          <CarouselContent>
-            <CarouselItem className='md:flex gap-5 item-center'>
-              <Image src='/airmax1.png' alt='shoe' width={441} height={441} className='mx-auto my-4'></Image>
-              <Image src='/airmax1.png' alt='shoe' width={441} height={441} className='mx-auto my-4'></Image>
-              <Image src='/airmax2.png' alt='shoe' width={441} height={441} className='mx-auto my-4'></Image>
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious className='absolute left-[92%] md:-top-6 '/>
-          <CarouselNext className='absolute -top-12 md:-top-6 left-[80%] md:left-[88%]'/>
+          <CarouselContent className='mx-5'>
+            <CarouselItem className='flex gap-5'>
+              <div>
+                <Image src='/1.png' alt='shoe' width={150} height={150} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='md:flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+              <div>
+                <Image src='/2.png' alt='shoe' width={150} height={150} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='md:flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+              <div>
+                <Image src='/3.png' alt='shoe' width={150} height={150} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='md:flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+            </CarouselItem>           
+            <CarouselItem className='flex gap-5'>
+              <div>
+                <Image src='/1.png' alt='shoe' width={150} height={150} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='md:flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+              <div>
+                <Image src='/2.png' alt='shoe' width={150} height={150} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='md:marker:flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+              <div>
+                <Image src='/3.png' alt='shoe' width={150} height={150} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='md:flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+            </CarouselItem>                  
+          </CarouselContent>         
+          <CarouselPrevious className='absolute left-[75%] md:left-[88%] -top-4 '/>
+          <CarouselNext className='absolute -top-4 left-[85%] md:left-[92%]'/>
         </Carousel>
       </section>
       <section className='mt-[5%]'>
@@ -98,3 +127,27 @@ const Hero = () => {
 }
 
 export default Hero
+
+
+
+{/* <CarouselItem className='md:hidden gap-5'>
+              <div>
+                <Image src='/1.png' alt='shoe' width={100} height={100} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+            </CarouselItem> 
+            <CarouselItem className='md:hidden gap-5'>
+              <div>
+                <Image src='/2.png' alt='shoe' width={100} height={100} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+            </CarouselItem>  
+            <CarouselItem className='md:hidden gap-5'>
+              <div>
+                <Image src='/3.png' alt='shoe' width={100} height={100} className='md:w-[400px] mx-auto my-4'></Image>
+                <div className='flex justify-between'><strong>Nike Air Max SE</strong><strong>&#8377;16 995</strong></div>
+                <p>Men&apos;s Shoes</p>
+              </div>
+            </CarouselItem> */}

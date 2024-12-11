@@ -25,10 +25,10 @@ const Checkout = () => {
             <p className='text-xs'>we do not ship to P.O boxes</p>
             <p><input type='text' placeholder='Address Line 2' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
             <p><input type='text' placeholder='Address Line 3' className='my-4 border-[#cccccc] border-[1px] outline-none py-2 md:py-1 pl-1 md:pr-36 rounded-md' /></p>
-            <p><input type='text' placeholder='Postal Code' className='my-4 mr-4 border-[#cccccc] border-[1px] outline-none p-1  text-center rounded-md' />
-            <input type='text' placeholder='Locality' className='my-4  border-[#cccccc] border-[1px] outline-none p-1 text-center rounded-md' /></p>
-            <p><input type='text' placeholder='State/Territory' className='my-4 mr-4 border-[#cccccc] border-[1px] outline-none p-1 text-center rounded-md' />
-            <input type='text' placeholder='Pakistan' className='my-4 border-[#cccccc] border-[1px] outline-none p-1 text-center rounded-md' /></p>
+            <p><input type='text' placeholder='Postal Code' className='my-4 mr-4 border-[#cccccc] border-[1px] outline-none p-1 md:text-center rounded-md' />
+            <input type='text' placeholder='Locality' className='my-4  border-[#cccccc] border-[1px] outline-none p-1 md:text-center rounded-md' /></p>
+            <p><input type='text' placeholder='State/Territory' className='my-4 mr-4 border-[#cccccc] border-[1px] outline-none p-1 md:text-center rounded-md' />
+            <input type='text' placeholder='Pakistan' className='my-4 border-[#cccccc] border-[1px] outline-none p-1 md:text-center rounded-md' /></p>
             <p>◻ Save this address to my profile</p>
             <p className='my-4'>◻ Make this my preferred address</p>
             <h3><strong>What&apos;s your contact information?</strong></h3>
