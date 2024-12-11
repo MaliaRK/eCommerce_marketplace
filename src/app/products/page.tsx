@@ -7,24 +7,12 @@ import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 
 const Products = () => {
   return (
-    <div className='max-w-[1500px] mx-auto'>
-      <div className='flex justify-between '>
-        <h3><strong>New (500)</strong></h3>
-        <ul className='flex gap-2'>
-          <span className='flex items-center gap-1'>
-            <p>Hide Filter</p>
-            <Image src='/filter.png' alt='filter' width={24} height={24}></Image>
-          </span>
-          <span className='flex gap-1 '>
-            <p>Sort By</p>
-            <Image src='/dropdown.png' alt='dropdown' width={24} height={24}></Image>
-          </span>
-        </ul>
-      </div>
-      <div className='grid grid-cols-[20%_auto] m-4 '>
+    <div className='max-w-[1440px] mx-auto'>
+      <div className='flex justify-between mx-10'>
+        <h3 className='hidden md:block'><strong>New (500)</strong></h3>
         <Sheet>
-          <SheetTrigger className='block md:hidden'>Products</SheetTrigger>
-          <SheetContent className="w-[400px] sm:w-[540px]">
+          <SheetTrigger className='block md:hidden'><strong>New (500) 👈</strong></SheetTrigger>
+          <SheetContent side="left" className="max-h-[100vh] overflow-y-auto">
             <ul>
               <li>Shoes</li>
               <li>Sports Bras</li>
@@ -39,24 +27,36 @@ const Products = () => {
               <li>Socks</li>
               <li>Accessories & Equipment</li>
               <br /><br />
-              <ul>Gender
+              <ul><strong>Gender</strong>
                 <li className='ml-2'>Men</li>
                 <li className='ml-2'>Women</li>
                 <li className='ml-2'>Unisex</li>
               </ul>
               <br /><br />
-              <ul>Kids
+              <ul><strong>Kids</strong>
                 <li className='ml-2'>Boys</li>
                 <li className='ml-2'>Girls</li>
               </ul>
               <br /><br />
-              <ul>Shop By Price
+              <ul><strong>Shop By Price</strong>
                 <li className='ml-2'>Under &#8377;2 500.00</li>
                 <li className='ml-2'>Under &#8377;2 501.00 - &#8377;</li>
               </ul>
             </ul>
           </SheetContent>
         </Sheet>
+        <ul className='flex gap-2'>
+          <span className='flex items-center gap-1'>
+            <p>Hide Filter</p>
+            <Image src='/filter.png' alt='filter' width={24} height={24}></Image>
+          </span>
+          <span className='flex gap-1 '>
+            <p>Sort By</p>
+            <Image src='/dropdown.png' alt='dropdown' width={24} height={24}></Image>
+          </span>
+        </ul>
+      </div>
+      <div className='grid md:grid-cols-[20%_auto] my-4 mx-5'>
         <ul className='hidden md:block'>
           <li>Shoes</li>
           <li>Sports Bras</li>
@@ -71,25 +71,25 @@ const Products = () => {
           <li>Socks</li>
           <li>Accessories & Equipment</li>
           <br /><br />
-          <ul>Gender
+          <ul><strong>Gender</strong>
             <li className='ml-2'>Men</li>
             <li className='ml-2'>Women</li>
             <li className='ml-2'>Unisex</li>
           </ul>
           <br /><br />
-          <ul>Kids
+          <ul><strong>Kids</strong>
             <li className='ml-2'>Boys</li>
             <li className='ml-2'>Girls</li>
           </ul>
           <br /><br />
-          <ul>Shop By Price
+          <ul><strong>Shop By Price</strong>
             <li className='ml-2'>Under &#8377;2 500.00</li>
             <li className='ml-2'>Under &#8377;2 501.00 - &#8377;</li>
           </ul>
         </ul>
-        <div className='grid grid-cols-1 md:grid-cols-3'>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-8'>
           <div>
-            <Link href='./productDetail' target='_blank'><Image src='/1.png' alt='shoe' width={348} height={10}></Image></Link>
+            <Link href='./productDetail'><Image src='/1.png' alt='shoe' width={348} height={10}></Image></Link>
             <div>
               <span className='text-[#9E3500]'>Just In</span>
               <h3><strong>Nike Air Force 1 Mid 07</strong></h3>
@@ -144,7 +144,6 @@ const Products = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

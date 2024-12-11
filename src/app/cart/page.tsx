@@ -57,7 +57,7 @@ const Cart = () => {
           <p>Subtotal &nbsp; &nbsp; &nbsp; &#8377;20 890.00</p>
           <p>Estimated Delivery & Handling &nbsp; &nbsp; Free</p>
           <p className='my-4'>Total &nbsp; &nbsp; &nbsp; &#8377;20 890.00</p>
-          <Link href='./checkout' target='_blank'><button className='bg-black text-white rounded-full px-8 py-1 my-3'>Member Checkout</button></Link>
+          <Link href='./checkout'><button className='bg-black text-white rounded-full px-8 py-1 my-3'>Member Checkout</button></Link>
         </div>
       </div>
       <div className='m-8 md:hidden'>

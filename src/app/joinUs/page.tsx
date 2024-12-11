@@ -20,7 +20,7 @@ const JoinUs = () => {
         <input type='text' placeholder='Locality' className='my-4  border-[#cccccc] border-[1px] outline-none p-1 md:text-center rounded-md' /></p>
         <p>⬜ Sign up for emails to get updates from Nike on products, offers and your Member benefits</p>
         <p>By creating an account, you agree to Nike&apos;s <u>Privacy Policy</u> and <u>Terms of Use</u>.</p>
-        <button className='bg-black text-white px-32 py-1 my-6 mx-4 rounded-md'>JOIN US</button>
+        <button className='bg-black text-white px-10 md:px-32 py-1 my-6 mx-4 rounded-md'>JOIN US</button>
         <p className='text-center'><span>Already a Member? </span><strong className='text-black'><u>Sign In</u></strong></p>
       </div>
     </div>

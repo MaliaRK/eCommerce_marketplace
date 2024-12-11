@@ -9,8 +9,9 @@ const Header = () => {
       <div className='flex justify-between bg-[#cccccc] p-2 '>
           <Image src='/human.png' alt='human' width={24} height={24}></Image>
           <ul className='flex items-center font-light'>
-              <li className='border-r-2 border-black px-2'>Find a Store</li>
-              <li className='border-r-2 border-black px-2'>Help</li>
+              <Link href='./home'><li className='border-r-2 border-black px-2'>Home</li></Link>
+              <Link href='./products'><li className='border-r-2 border-black px-2'>Find a Store</li></Link>
+              <Link href='./contact'><li className='border-r-2 border-black px-2'>Help</li></Link>
               <Link href='./joinUs'><li className='border-r-2 border-black px-2'>Join Us</li></Link>
               <Link href='./login'><li className='px-2'>Sign In</li></Link>
           </ul>
@@ -37,21 +38,20 @@ const Header = () => {
           <SheetTrigger className='block md:hidden mr-2'>Menu</SheetTrigger>
           <SheetContent>
               <ul className='font-light'>
-                <li>Home</li>
+                <Link href='./home'><li>Home</li></Link>
                 <li>New & Featured</li>
-                <Link href='./products' target='_blank'><li>Men</li></Link>
-                <Link href='./products' target='_blank'><li>Women</li></Link>
+                <Link href='./products'><li>Men</li></Link>
+                <Link href='./products'><li>Women</li></Link>
                 <li>Kids</li>
                 <li>Sale</li>
                 <li className='font-semibold'>SNKRS</li>
-                <li>cart</li>
-                <li>Checkout</li>
-                <li>Contact</li>
-                <li>Products</li>
-                <li>Product Details</li>
-                <li>Join us</li>
-                <li>Ligin</li>
-                <li>Sale</li>
+                <Link href='./cart'><li>cart</li></Link>
+                <Link href='./checkout'><li>Checkout</li></Link>
+                <Link href='./contact'><li>Contact</li></Link>
+                <Link href='./products'><li>Products</li></Link>
+                <Link href='./productDetail'><li>Product Details</li></Link>
+                <Link href='./joinUs'><li>Join us</li></Link>
+                <Link href='./login'><li>Ligin</li></Link>
               </ul>
           </SheetContent>
         </Sheet>

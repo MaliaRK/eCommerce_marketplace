@@ -15,7 +15,7 @@ const Login = () => {
           <span>Forgotten your password?</span>
         </div>
         <p className='mx-[10%] my-6 text-center'>By logging in, you agree to Nike&apos;s <u>Privacy Policy</u> and Terms of Use</p>
-        <button className='bg-black text-white px-32 py-1 mx-4 my-6 rounded-md'>SIGN IN</button>
+        <button className='bg-black text-white px-10 md:px-32 py-1 mx-4 my-6 rounded-md'>SIGN IN</button>
         <p className='text-center'><span>Not a Member? </span><strong className='text-black'><u>Join Us</u></strong></p>
       </div>
     </div>
