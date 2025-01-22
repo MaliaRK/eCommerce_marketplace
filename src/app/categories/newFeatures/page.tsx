@@ -3,6 +3,7 @@ import { Product } from '../../../../type';
 import { client } from '@/sanity/lib/client';
 import Link from 'next/link';
 import { urlFor } from '@/sanity/lib/image';
+import Image from 'next/image';
 
 const NewFeatures = async () => {
     const query = `*[_type == "product" && category != "Men's Shoes" && category != "Women's Shoes"]{
@@ -16,15 +17,15 @@ const NewFeatures = async () => {
 
     const newFeatures: Product[] = await client.fetch(query);
     console.log(newFeatures);
-    
+
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {/* mens product */}
             {newFeatures.map((product) => {
                 return (
-                    <div>
-                        <Link href={`/products/${product.slug}`} key={product.slug}>
-                            <img
+                    <Link href={`/products/${product.slug}`} key={product.slug}>
+                        <div>
+                            <Image
                                 src={urlFor(product.image).url()}
                                 alt={product.productName}
                                 width={348}
@@ -43,8 +44,8 @@ const NewFeatures = async () => {
                                     <strong>MRP : &#8377;{product.price}</strong>
                                 </h4>
                             </div>
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
                 )
             })}
         </div>

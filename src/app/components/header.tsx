@@ -4,10 +4,9 @@ import Link from 'next/link'
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import Navbar from './navbar'
 import SearchProduct from './search'
-import { useCart } from '@/context/cartContext'
 
 const Header = () => {
-  // const { cartItems } = useCart();
+
   return (
     <div className='max-w-[1440px] mx-auto'>
       {/* navbar */}
@@ -32,7 +31,6 @@ const Header = () => {
           </div> */}
           <Image src='/wishlist.png' alt='wishlist' width={38} height={38}></Image>
           <Link href='./cart' target='_blank'><Image src='/bag.png' alt='bag' width={50} height={50} className='md:w-10'/>
-          {/* <p>Cart Items: {cartItems.length}</p> */}
           </Link>
         </div>
         <Sheet>

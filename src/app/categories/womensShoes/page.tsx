@@ -3,6 +3,7 @@ import { Product } from '../../../../type';
 import { client } from '@/sanity/lib/client';
 import Link from 'next/link';
 import { urlFor } from '@/sanity/lib/image';
+import Image from 'next/image';
 
 const WomensProduct = async () => {
     const query = `*[_type == "product" && category == "Women's Shoes"]{
@@ -25,7 +26,7 @@ const WomensProduct = async () => {
 
                     <Link href={`/products/${product.slug}`} key={product.slug}>
                         <div>
-                            <img
+                            <Image
                                 src={urlFor(product.image).url()}
                                 alt={product.productName}
                                 width={348}

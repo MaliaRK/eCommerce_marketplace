@@ -7,7 +7,7 @@ import { client } from '@/sanity/lib/client'                                    
 import { urlFor } from '@/sanity/lib/image'
 
 
-export const revalidation = 10;
+export const revalidate = 10;
 
 const Products = async () => {
   const query = `*[_type == "product"] | order(_createdAt asc)[0..22]{
@@ -101,7 +101,7 @@ const Products = async () => {
             return (
               <Link href={`/products/${product.slug}`} key={product.slug}>
                 <div>
-                  <img
+                  <Image
                     src={urlFor(product.image).url()}
                     alt={product.productName}
                     width={348}
