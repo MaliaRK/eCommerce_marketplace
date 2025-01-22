@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Product } from '../../../type'
 
 const Cart = () => {
+  
   return (
     <div className='max-w-[1440px] mx-auto'>
       <div className='mx-[10%] my-[4%] grid grid-cols-1 md:grid-cols-[70%_auto]'>
@@ -68,6 +70,11 @@ const Cart = () => {
         <h3>You Might Also Like</h3>
         <Image src='/cartShoe.png' alt='shoe' width={431} height={20}></Image>       
       </div>
+
+
+      
+
+
     </div>
   )
 }

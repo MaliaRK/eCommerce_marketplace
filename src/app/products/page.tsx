@@ -1,11 +1,20 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
+import { Product } from '../../../type'
+import { client } from '@/sanity/lib/client'                                                      //products listing page
+import { urlFor } from '@/sanity/lib/image'
 
 
-const Products = () => {
+export const revalidation = 10;
+
+const Products = async () => {
+  const query = `*[_type == "product"] | order(_createdAt asc)[0..22]{
+  image, status, productName, category, colors, price, inventory, "slug": slug.current}`;
+
+  const products: Product[] = await client.fetch(query);
+
   return (
     <div className='max-w-[1440px] mx-auto'>
       <div className='flex justify-between mx-2 md:mx-10'>
@@ -87,82 +96,38 @@ const Products = () => {
             <li className='ml-2'>Under &#8377;2 501.00 - &#8377;</li>
           </ul>
         </ul>
-        <div className='grid grid-cols-2 md:grid-cols-3 gap-8'>
-          <div>
-            <Link href='./productDetail'><Image src='/1.png' alt='shoe' width={348} height={10}></Image></Link>
-            <div>
-              <span className='text-[#9E3500]'>Just In</span>
-              <h3><strong>Nike Air Force 1 Mid 07</strong></h3>
-              <p className='text-xs'>Men&apos;s Shoes <br />1 Colour</p>
-              <h4><strong>MRP : &#8377;10 795.00</strong></h4>
-            </div>
-          </div>
-          <div>
-            <Image src='/2.png' alt='shoe' width={348} height={10}></Image>
-            <div>
-              <span className='text-[#9E3500]'>Just In</span>
-              <h3><strong>Nike Court Vision Low Next Nature</strong></h3>
-              <p className='text-xs'>Men&apos;s Shoes <br />1 Colour</p>
-              <h4><strong>MRP : &#8377;4 995.00</strong></h4>
-            </div>
-          </div>
-          <div>
-            <Image src='/3.png' alt='shoe' width={348} height={10}></Image>
-            <div>
-              <span className='text-[#9E3500]'>Just In</span>
-              <h3><strong>Nike Air Force 1 PLT.AF.ORM</strong></h3>
-              <p className='text-xs'>Women&apos;s Shoes <br />1 Colour</p>
-              <h4><strong>MRP : &#8377;8 695.00</strong></h4>
-            </div>
-          </div>
-          <div>
-            <Image src='/4.png' alt='shoe' width={348} height={10}></Image>
-            <div>
-              <span className='text-[#9E3500]'>Just In</span>
-              <h3><strong>Nike Air Force 1 React</strong></h3>
-              <p className='text-xs'>Men&apos;s Shoes <br />1 Colour</p>
-              <h4><strong>MRP : &#8377;13 295.00</strong></h4>
-            </div>
-          </div>
-          <div>
-            <Image src='/5.png' alt='shoe' width={348} height={10}></Image>
-            <div>
-              <span className='text-[#9E3500]'>Just In</span>
-              <h3><strong>Air Jordan 1 Elevate Low</strong></h3>
-              <p className='text-xs'>Men&apos;s Shoes <br />1 Colour</p>
-              <h4><strong>MRP : &#8377;11 895.00</strong></h4>
-            </div>
-          </div>
-          <div>
-            <Image src='/6.png' alt='shoe' width={348} height={10}></Image>
-            <div>
-              <span className='text-[#9E3500]'>Just In</span>
-              <h3><strong>Nike Standard Issue</strong></h3>
-              <p className='text-xs'>Men&apos;s Shoes <br />1 Colour</p>
-              <h4><strong>MRP : &#8377;2 695.00</strong></h4>
-            </div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          {products.map((product) => {
+            return (
+              <Link href={`/products/${product.slug}`} key={product.slug}>
+                <div>
+                  <img
+                    src={urlFor(product.image).url()}
+                    alt={product.productName}
+                    width={348}
+                    height={10}
+                  />
+                  <div>
+                    <span className="text-[#9E3500]">{product.status}</span>
+                    <h3>
+                      <strong>{product.productName}</strong>
+                    </h3>
+                    <p className="text-xs">
+                      {product.category} <br />
+                      {product.inventory} {product.colors?.join(', ')}
+                    </p>
+                    <h4>
+                      <strong>MRP : &#8377;{product.price}</strong>
+                    </h4>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
 export default Products
-
-
-
-{/* <Sheet>
-          <SheetTrigger  className='md:hidden'>
-          </SheetTrigger>
-          <SheetContent side='left' className="w-[400px] sm:w-[540px]">
-              <ul>
-                <li>New & Featured</li>
-                <li>Men</li>
-                <li>Women</li>
-                <li>Kids</li>
-                <li>Sale</li>
-                <li>SNKRS</li>
-              </ul>
-          </SheetContent>
-        </Sheet>     */}
