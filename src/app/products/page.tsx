@@ -1,15 +1,22 @@
 // 'use client'
 
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 // import Link from 'next/link'
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
-import ProductListing from '../components/productListing'
-// import { Product } from '../../../type'
-// import { client } from '@/sanity/lib/client'
+import { Product } from '../../../type'
+import { client } from '@/sanity/lib/client'
 // import { urlFor } from '@/sanity/lib/image'
+import ProductListing from '../components/productListing'
 
-const Products = () => {
+const Products = async () => {
+
+  const query = `*[_type == "product"] | order(_createdAt asc)[0..22]{
+    image, status, productName, category, colors, price, inventory, "slug": slug.current
+  }`;
+  
+  const products: Product[] = await client.fetch(query);
+
   // const [products, setProducts] = useState<Product[] | []>([]);
   // useEffect(() => {
   //   const fetchProducts = async () => {
@@ -109,7 +116,9 @@ const Products = () => {
             <li className='ml-2'>Under &#8377;2 501.00 - &#8377;</li>
           </ul>
         </ul>
-        <ProductListing/>
+
+        <ProductListing products={products} />
+
         {/* <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {products.map((product) => {
             return (
