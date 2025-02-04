@@ -1,19 +1,31 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import { Product } from '../../../type'
-import { client } from '@/sanity/lib/client'                                                      //products listing page
+import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 
+const Products = () => {
+  const [products, setProducts] = useState<Product[] | []>([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const query = `*[_type == "product"] | order(_createdAt asc)[0..22]{
+          image, status, productName, category, colors, price, inventory, "slug": slug.current
+        }`;
 
-export const revalidate = 10;
+        const res: Product[] = await client.fetch(query);
+        setProducts(res);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
 
-const Products = async () => {
-  const query = `*[_type == "product"] | order(_createdAt asc)[0..22]{
-  image, status, productName, category, colors, price, inventory, "slug": slug.current}`;
-
-  const products: Product[] = await client.fetch(query);
+    fetchProducts();
+  }, []); // Run once on mount
 
   return (
     <div className='max-w-[1440px] mx-auto'>

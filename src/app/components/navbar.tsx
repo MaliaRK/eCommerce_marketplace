@@ -1,7 +1,4 @@
-// src/app/components/Navbar.tsx
 import Link from 'next/link';
-import { Product } from '../../../type';
-import { client } from '@/sanity/lib/client';
 
 const Navbar = () => {
     return (

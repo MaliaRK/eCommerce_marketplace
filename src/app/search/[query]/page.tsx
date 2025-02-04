@@ -1,7 +1,6 @@
 import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const SearchResultsPage = async ({ params }: { params: { query: string } }) => {
     const { query } = params;

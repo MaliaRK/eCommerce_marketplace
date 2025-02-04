@@ -4,20 +4,24 @@ import Link from 'next/link'
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import Navbar from './navbar'
 import SearchProduct from './search'
+import { UserButton } from '@clerk/nextjs'
+import Cart from './cart'
+
 
 const Header = () => {
+  
 
   return (
     <div className='max-w-[1440px] mx-auto'>
-      {/* navbar */}
       <div className='flex justify-between bg-[#cccccc] p-2 '>
           <Image src='/human.png' alt='human' width={24} height={24}></Image>
           <ul className='flex items-center font-light'>
               <Link href='/'><li className='border-r-2 border-black px-1 md:px-2'>Home</li></Link>
               <Link href='/products'><li className='border-r-2 border-black px-1 md:px-2'>Find a Store</li></Link>
               <Link href='/contact'><li className='border-r-2 border-black px-1 md:px-2'>Help</li></Link>
-              <Link href='/joinUs'><li className='border-r-2 border-black px-1 md:px-2'>Join Us</li></Link>
-              <Link href='/login'><li className='px-2'>Sign In</li></Link>
+              <Link href='/sign-up'><li className='border-r-2 border-black px-1 md:px-2'>Sign Up</li></Link>
+              <Link href='/sign-in'><li className='px-2'>Sign In</li></Link>
+              <li className='px-1 md:px-2'><UserButton/></li>
           </ul>
       </div>
       <nav className='flex justify-between items-center mt-2'>
@@ -25,14 +29,8 @@ const Header = () => {
         <Navbar/>
         <div className='flex items-center gap-2'>
           <SearchProduct/>
-          {/* <div className='flex gap-1 bg-[#cccccc] p-1 rounded-full '>
-            <Image src='/search.png' alt='search' width={40} height={36}></Image>
-            <input type='text' placeholder='Search' className='bg-transparent border-none outline-none' />
-          </div> */}
           <Image src='/wishlist.png' alt='wishlist' width={38} height={38}></Image>
-          <Link href='./cart' target='_blank'><Image src='/bag.png' alt='bag' width={50} height={50} className='md:w-10'/>
-          </Link>
-        </div>
+          <Link href='/cart'><Cart/></Link></div>
         <Sheet>
           <SheetTrigger className='block md:hidden mr-2'>Menu</SheetTrigger>
           <SheetContent>
@@ -59,4 +57,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

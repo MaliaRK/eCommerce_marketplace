@@ -1,104 +1,21 @@
-// 'use client'
-
-// import React, { useEffect, useState } from 'react';
-// import { client } from '@/sanity/lib/client';
-// import { urlFor } from '@/sanity/lib/image';
-// import { Product } from '../../../../type';
-// import Link from 'next/link';
-// import Image from 'next/image'
-// import CartProps from '@/app/components/cartProps';
-// import { useRouter } from 'next/navigation';
-
-// const ProductDetail = ({ params: { slug } }: { params: { slug: string } }) => {
-//   const [product, setProduct] = useState<Product | null>(null);
-//   const [cartItems, setCartItems] = useState<Product[] | []>([]);
-//   const router = useRouter();
-  
-//   useEffect(() => {
-//     const fetchProductData = async () => {
-//       const query = `*[_type == "product" && slug.current == $slug][0]{                             // product detail page
-//         productName,
-//         image,
-//         price,
-//         description
-//       }`;
-
-//       const params = { slug };
-
-//       try {
-//         const productData = await client.fetch(query, params);
-//         setProduct(productData);
-//       } catch (error) {
-//         console.error('Failed to fetching product data:', error);
-//       }
-//     };
-
-//     fetchProductData();
-//   }, [slug]);
-
-//   function handleSearch() {
-//     if(product) {
-//       console.log(product);
-//       setCartItems([product]);
-//       router.push(`/cart`);
-//     }
-//   }
-
-//   if (!product) {
-//     return <p>Loading...</p>;
-//   }
-
-//   return (
-//     <div className='max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-[40%_auto] '>
-//       <Image
-//         src={urlFor(product.image).url()}
-//         alt={product.productName}
-//         width={300}
-//         height={10}
-//         className="mx-auto rounded-lg"
-//       />
-//       <div className='mx-10 mt-10 md:my-auto'>
-//         <h3 className='text-2xl'><strong>{product.productName}</strong></h3>
-//         <p className='my-4 text-s'>{product.description}</p>
-//         <p className='text-xl'><strong>&#8377;{product.price}</strong></p>
-//         <button onClick={handleSearch} className='bg-black text-white rounded-full px-4 py-1 my-3 flex gap-1 items-center'>
-//           <Image src='/cart.png' alt='add to cart' width={29} height={10}></Image>
-//           Add To Cart
-//         </button>
-//         <CartProps  text={product?.productName} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductDetail;
-
-
-
-
-
-'use client'
-
+'use client';
 import React, { useEffect, useState } from 'react';
-import { client } from '@/sanity/lib/client';
-import { urlFor } from '@/sanity/lib/image';
-import { Product } from '../../../../type';
-import Link from 'next/link';
-import Image from 'next/image'
 import { useRouter } from 'next/navigation';
+import { useUser, RedirectToSignIn } from '@clerk/nextjs';
+import { Product } from '../../../../type';
+import Image from 'next/image';
+import { urlFor } from '@/sanity/lib/image';
+import { client } from '@/sanity/lib/client';
 
 const ProductDetail = ({ params: { slug } }: { params: { slug: string } }) => {
   const [product, setProduct] = useState<Product | null>(null);
-  const [cartItems, setCartItems] = useState<string | "">("");
+  const { user } = useUser();
   const router = useRouter();
-  
+
   useEffect(() => {
     const fetchProductData = async () => {
-      const query = `*[_type == "product" && slug.current == $slug][0]{                             // product detail page
-        productName,
-        image,
-        price,
-        description
+      const query = `*[_type == "product" && slug.current == $slug][0]{ 
+        productName, category, image, price, description, _id
       }`;
 
       const params = { slug };
@@ -107,38 +24,43 @@ const ProductDetail = ({ params: { slug } }: { params: { slug: string } }) => {
         const productData = await client.fetch(query, params);
         setProduct(productData);
       } catch (error) {
-        console.error('Failed to fetching product data:', error);
+        console.error('Failed to fetch product data:', error);
       }
     };
 
     fetchProductData();
   }, [slug]);
 
-
-    //  function handleSearch() {
-    //     if(product) {
-    //       console.log(product);
-    //       setCartItems([product]);
-    //       router.push(`/cart`);
-    //     }
-    //   }
-
-  // function handleClick() {
-  //   if (product) {
-  //     const taregtProduct = product.productName;
-  //     setCartItems(taregtProduct);
-  //     router.push(`/cart/${encodeURIComponent(cartItems)}`)
-  //   }
-  // }
-
-  // console.log(ca   rtItems);
-
   if (!product) {
     return <p>Loading...</p>;
   }
 
+  const handleClick = (product: Product) => {
+    if (!user) {
+      // Use Router for redirection
+      router.push('/sign-in');
+      return;
+    }
+
+    // Handle adding product to cart
+    const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+    if (cart[product.productName]) {
+      cart[product.productName].quantity += 1;
+    } else {
+      cart[product.productName] = { ...product, quantity: 1 };
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Dispatch a custom event to notify cart updates
+    window.dispatchEvent(new Event('cartUpdated'));
+
+    console.log(cart);
+    // alert(`${product.productName} has been added to the cart!`);
+  };
+
   return (
-    <div className='max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-[40%_auto] '>
+    <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-[40%_auto]">
       <Image
         src={urlFor(product.image).url()}
         alt={product.productName}
@@ -146,15 +68,22 @@ const ProductDetail = ({ params: { slug } }: { params: { slug: string } }) => {
         height={10}
         className="mx-auto rounded-lg"
       />
-      <div className='mx-10 mt-10 md:my-auto'>
-        <h3 className='text-2xl'><strong>{product.productName}</strong></h3>
-        <p className='my-4 text-s'>{product.description}</p>
-        <p className='text-xl'><strong>&#8377;{product.price}</strong></p>
-        <button className='bg-black text-white rounded-full px-4 py-1 my-3 flex gap-1 items-center'>
-          <Image src='/cart.png' alt='add to cart' width={29} height={10}></Image>
+      <div className="mt-10 md:my-auto">
+        <h3 className="text-2xl">
+          <strong>{product.productName}</strong>
+        </h3>
+        <p className="my-4 text-s">{product.category}</p>
+        <p className="my-4 text-s">{product.description}</p>
+        <p className="text-xl">
+          <strong>&#8377;{product.price}</strong>
+        </p>
+        <button
+          onClick={() => handleClick(product)}
+          className="bg-black text-white rounded-full px-4 py-1 my-3 flex gap-1 items-center hover:bg-gray-800 active:scale-95 duration-200"
+        >
+          <Image src="/cart.png" alt="add to cart" width={29} height={10} />
           Add To Cart
         </button>
-        {/* <CartProps  text={product?.productName} /> */}
       </div>
     </div>
   );
@@ -164,3 +93,29 @@ export default ProductDetail;
 
 
 
+
+
+
+
+// const handleClick = (product: Product) => {
+//   if (!user) {
+//     // Redirect to Clerk's sign-in page if user is not authenticated
+//     <RedirectToSignIn/>; // This will navigate to the sign-in page
+//     // return;
+//   }
+
+//   // Handle adding product to cart for authenticated users
+//   const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+//   if (cart[product.productName]) {
+//     cart[product.productName] = {
+//       ...cart[product.productName],
+//       quantity: cart[product.productName].quantity + 1,
+//     };
+//   } else {
+//     cart[product.productName] = { ...product, quantity: 1 };
+//   }
+
+//   localStorage.setItem('cart', JSON.stringify(cart));
+//   console.log(cart);
+//   alert(`${product.productName} has been added to the cart!`);
+// };

@@ -8,7 +8,7 @@ const Contact = () => {
       <div className='mx-10'>
         <h3 className='text-2xl text-center'><strong>GET HELP</strong></h3>
         <p className='mx-[30%] flex items center justify-around rounded-md border-[1px] border-[#cccccc] '>
-          <input type="text" placeholder='What can we help you with?'className='outline-none md:pr-32 py-1' />
+          <input type="text" placeholder='What can we help you?'className='outline-none md:pr-32 py-1' />
           <Image src='/search.png' alt='search' width={24} height={20} className='mx-aut'></Image>       
         </p>
         <h3 className='text-2xl my-4'><strong>WHAT PAYMENT OPTIONS I USE ON NIKE ORDERS?</strong></h3>

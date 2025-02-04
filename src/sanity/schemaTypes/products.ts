@@ -64,5 +64,14 @@ export const productSchema = defineType({
       title: 'Description',
       type: 'text',
     },
+    {
+      name: 'productId',         // Add productId field
+      title: 'Product ID',
+      type: 'string',
+      initialValue: () => {
+        return Math.random().toString(36).substr(2, 9);  // Generates a random string
+      },
+      readOnly: true,  // Optionally, make it read-only
+    },
   ],
 });
