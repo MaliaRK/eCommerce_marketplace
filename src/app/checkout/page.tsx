@@ -1,8 +1,25 @@
-import React from 'react'
+'use client';
+
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import ContactForm from '../components/contactForm'
+import { Product } from '../../../type';
+import CartSummary from '../components/cartSummary';
+import Link from 'next/link';
 
 const Checkout = () => {
+    const [products, setProducts] = useState<Product[]>([]);
+    const [subTotal, setSubTotal] = useState<number>(0);
+
+    useEffect(() => {
+        const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+        const cartArray: Product[] = Object.values(cart);
+        setProducts(cartArray);
+
+        const total = cartArray.reduce((acc: number, product: Product) => acc + product.price * product.quantity, 0);
+        setSubTotal(total);
+    }, []);
+
     return (
         <div className='max-w-[1440px] mx-auto my-[6%] grid grid-cols-1 md:grid-cols-[60%_auto]'>
             <div className='mx-10'>
@@ -30,30 +47,12 @@ const Checkout = () => {
                 <h3 className='my-4'>payment</h3>
             </div>
             <div className='ml-10 mt-[8%]'>
-                <div>
-                    <h3><strong>Order Summary</strong></h3>
-                    <p>Subtotal &nbsp; &nbsp; &nbsp; &#8377;20 890.00</p>
-                    <p>Delivery/Shipping &nbsp; &nbsp; Free</p>
-                    <hr className='w-[50%]' />
-                    <p className='my-4'>Total &nbsp; &nbsp; &nbsp; &#8377;20 890.00</p>
-                    <hr className='w-[50%]' />
-                    <p>(The total reflects the price of your order, including all duties and taxes)</p>
-                </div>
-                <h3 className='text-lg mt-6'><strong>Arrives Mon, 27Mar - Wed, 12Apr</strong></h3>
-                <div className='text-xs flex items-center'>
-                    <Image src='/cartMan.png' alt='hemanro' width={150} height={10}></Image>
-                    <div>
-                        <p><strong>Nike Dri-FIT ADV Technit Ultra</strong></p>
-                        <p>Men&apos;s Short Sleeve Running <br /> Qty 1 <br /> Size L <br /> &#8377;3 895.00 </p>
-                    </div>
-                </div>
-                <div className='text-xs flex items-center mt-6'>
-                    <Image src='/cartShoe1.png' alt='shoe' width={208} height={10}></Image>
-                    <div>
-                        <p><strong>Nike Air Max 97 SE Men&apos;s Shoes</strong></p>
-                        <p>Qty 1 <br /> Size UK 8 <br /> &#8377;16 995.00 </p>
-                    </div>
-                </div>
+                <CartSummary products={products} subTotal={subTotal} showCheckoutLink={false} />
+                <Link href={`/payment?subtotal=${subTotal}`}>
+                    <button className='bg-black text-white rounded-full px-8 py-2 mt-5'>
+                        Proceed to Payment
+                    </button>
+                </Link>
             </div>
         </div>
     )

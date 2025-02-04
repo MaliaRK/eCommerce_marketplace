@@ -5,7 +5,6 @@ import Link from 'next/link';
 const SearchResultsPage = async ({ params }: { params: { query: string } }) => {
     const { query } = params;
 
-    // Fetch results from the API
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/search?q=${encodeURIComponent(query)}`);
     const data = await res.json();
 

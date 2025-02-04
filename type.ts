@@ -13,3 +13,9 @@ export type Product = {
   quantity: number;
   uid: number | string | undefined;
 }
+
+export interface CartSummaryProps {
+  products: Product[];
+  subTotal: number;
+  showCheckoutLink?: boolean; // Optional: Only show checkout link if needed
+}

@@ -12,7 +12,6 @@ const Page = () => {
 
 export default Page
 
-
 export const metadata: Metadata = {
   title: 'Nike - eCommerce',
   description: 'Buy online with eCommerce platform',

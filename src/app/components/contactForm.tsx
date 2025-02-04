@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { client } from '@/sanity/lib/client'
-import Link from 'next/link'
 
 type FormType = z.infer<typeof formSchema>;
 
@@ -205,7 +204,7 @@ const ContactForm = () => {
           <p className='mt-10'>◻ I have read and consent to aShopWorld processing my information
             in accordance with the <u>Privacy Statement</u> and <u>Cookie Policy</u>. eShopWorld
             is a trusted Nike partner. </p>
-          <Link href={'/payment'}><Button type="submit" className='px-16 md:px-32 py-1 md:mx-4 my-6 rounded-full'>Continue</Button></Link>
+          <Button type="submit" className='px-16 md:px-32 py-1 md:mx-4 my-6 rounded-full'>Continue</Button>
           <hr />
         </form>
       </Form>

@@ -133,7 +133,6 @@ const Cart = () => {
 
       <h3>You Might Also Like</h3>
       <FavouriteProduct/>
-
     </div>
   );
 };

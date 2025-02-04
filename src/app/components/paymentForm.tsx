@@ -1,46 +1,44 @@
 import React, { useState } from 'react'
 import { PaymentElement, useStripe, useElements } from "@stripe/react-stripe-js"
 
-export default function PaymentForm() {
-    const stripe = useStripe(); // Hook to access Stripe methods
-    const elements = useElements(); // Hook to access Stripe elements
-    const [isProcessing, setIsProcessing] = useState(false); // State to manage loading state while processing
-    const [errorMessage, setErrorMessage] = useState<string | null>(null); // State to show error messages
+export default function PaymentForm({subtotal}: {subtotal: number}) {
+    const stripe = useStripe(); 
+    const elements = useElements(); 
+    const [isProcessing, setIsProcessing] = useState(false); 
+    const [errorMessage, setErrorMessage] = useState<string | null>(null); 
   
     const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault(); // Prevent page refresh when submitting the form
+      e.preventDefault(); 
   
-      if (!stripe || !elements) return; // Ensure Stripe is loaded before proceeding
+      if (!stripe || !elements) return; 
   
-      setIsProcessing(true); // Indicate that the payment is being processed
+      setIsProcessing(true); 
   
       // Attempt to confirm the payment
       const { error } = await stripe.confirmPayment({
         elements,
-        redirect: "if_required", // Redirect if required by the payment method
+        redirect: "if_required", 
       });
   
       if (error) {
-        setErrorMessage(error.message || "An unknown error occurred"); // Display error message if payment fails
+        setErrorMessage(error.message || "An unknown error occurred");
         setIsProcessing(false);
       } else {
-        // Payment was successful
         setErrorMessage(null);
-        alert("Payment successful!"); // Notify the user
+        alert("Payment successful!"); 
         setIsProcessing(false);
-        // You can optionally redirect the user to a success page here
       }
     };
   
     return (
       <form onSubmit={handleSubmit}>
-        {/* Stripe's payment element (handles input fields for card details, etc.) */}
+        <h3>Order Summary</h3>
+        <p>Subtotal: ${subtotal.toFixed(2)}</p>
         <PaymentElement />
         <button type="submit" 
         disabled={!stripe || isProcessing}>
-          {isProcessing ? "Processing..." : "Pay Now"} {/* Show dynamic button text */}
+          {isProcessing ? "Processing..." : "Pay Now"}
         </button>
-        {/* Display any error messages if they occur */}
         {errorMessage && <div style={{ color: "red", marginTop: 8 }}>{errorMessage}</div>}
       </form>
     );

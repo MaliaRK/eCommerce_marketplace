@@ -2,12 +2,11 @@
 
 import Stripe from "stripe";
 
-export async function createPaymentIntent() {
+export async function createPaymentIntent(amount: number) {
+    console.log('Amount received in createPaymentIntent:', amount);
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
-
+    
     try {
-        const amount = 2000;
-
         const paymentIntent = await stripe.paymentIntents.create({
             amount,
             currency: "usd",
@@ -15,6 +14,7 @@ export async function createPaymentIntent() {
                 enabled: true,
             },
         });
+        console.log('Payment Intent created:', paymentIntent);
         return {
             clientSecret: paymentIntent.client_secret,
         };

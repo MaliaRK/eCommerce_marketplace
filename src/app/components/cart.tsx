@@ -8,7 +8,6 @@ export default function Cart() {
   const [products, setProducts] = useState<Product[]>([]);
   const [quantity, setQuantity] = useState<number>(0);
 
-  // ✅ Function to update cart
   const updateCart = () => {
     const cart = JSON.parse(localStorage.getItem('cart') || '{}');
     const cartArray: Product[] = Object.values(cart);
@@ -19,9 +18,8 @@ export default function Cart() {
   };
 
   useEffect(() => {
-    updateCart(); // Load cart on mount
+    updateCart(); 
 
-    // ✅ Listen for cart updates (real-time)
     const handleCartUpdate = () => updateCart();
     window.addEventListener('cartUpdated', handleCartUpdate);
     
