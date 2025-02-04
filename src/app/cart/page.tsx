@@ -69,11 +69,10 @@ const Cart = () => {
           "Your Cart is empty..." // Display this only if products is empty
         ) : (
           <div>
-            {products.map((product) => (
-              <div key={product.productName}>
-                <div className="text-sm flex gap-2 mx-4 my-6">
-                  <div className=''>
-                    <img
+            {products.map((product) => (           
+                <div key={product.productName} className="text-sm flex gap-2 mx-4 my-6">
+                  <div>
+                    <Image
                       src={urlFor(product.image).url()}
                       alt={product.productName}
                       width={200}
@@ -106,14 +105,13 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-              </div>
             ))}
           </div>
         )}
         <div className='mx-10 md:mx-auto mt-[4%]'>
           <h3><strong>Summary</strong></h3>
           {products.map((product) => (
-            <div className='flex justify-between gap-10 my-3'>
+            <div key={product.productName} className='flex justify-between gap-10 my-3'>
               <p>{product.productName}</p>
               <span>{product.price * product.quantity}</span>
             </div>
