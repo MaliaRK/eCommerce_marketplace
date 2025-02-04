@@ -1,31 +1,32 @@
-'use client'
+// 'use client'
 
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
-import { Product } from '../../../type'
-import { client } from '@/sanity/lib/client'
-import { urlFor } from '@/sanity/lib/image'
+import ProductListing from '../components/productListing'
+// import { Product } from '../../../type'
+// import { client } from '@/sanity/lib/client'
+// import { urlFor } from '@/sanity/lib/image'
 
 const Products = () => {
-  const [products, setProducts] = useState<Product[] | []>([]);
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const query = `*[_type == "product"] | order(_createdAt asc)[0..22]{
-          image, status, productName, category, colors, price, inventory, "slug": slug.current
-        }`;
+  // const [products, setProducts] = useState<Product[] | []>([]);
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const query = `*[_type == "product"] | order(_createdAt asc)[0..22]{
+  //         image, status, productName, category, colors, price, inventory, "slug": slug.current
+  //       }`;
 
-        const res: Product[] = await client.fetch(query);
-        setProducts(res);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
+  //       const res: Product[] = await client.fetch(query);
+  //       setProducts(res);
+  //     } catch (error) {
+  //       console.error("Error fetching products:", error);
+  //     }
+  //   };
 
-    fetchProducts();
-  }, []); // Run once on mount
+  //   fetchProducts();
+  // }, []); // Run once on mount
 
   return (
     <div className='max-w-[1440px] mx-auto'>
@@ -108,7 +109,8 @@ const Products = () => {
             <li className='ml-2'>Under &#8377;2 501.00 - &#8377;</li>
           </ul>
         </ul>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <ProductListing/>
+        {/* <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {products.map((product) => {
             return (
               <Link href={`/products/${product.slug}`} key={product.slug}>
@@ -136,7 +138,7 @@ const Products = () => {
               </Link>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </div >
   )
