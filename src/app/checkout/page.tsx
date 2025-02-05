@@ -49,7 +49,7 @@ const Checkout = () => {
             <div className='ml-10 mt-[8%]'>
                 <CartSummary products={products} subTotal={subTotal} showCheckoutLink={false} />
                 <Link href={`/payment?subtotal=${subTotal}`}>
-                    <button className='bg-black text-white rounded-full px-8 py-2 mt-5'>
+                    <button className='bg-black hover:bg-gray-800 text-white rounded-full px-8 py-2 mt-5'>
                         Proceed to Payment
                     </button>
                 </Link>

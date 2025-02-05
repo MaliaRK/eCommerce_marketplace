@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 
-
 const Contact = () => {
   return (
     <div className='max-w-[1440px] mx-auto my-[4%] md:grid grid-cols-[80%_auto] '>

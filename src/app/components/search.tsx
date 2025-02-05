@@ -14,9 +14,9 @@ const SearchProduct = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const trimmedValue = inputValue.trim(); // Remove extra spaces
+        const trimmedValue = inputValue.trim();
         if (trimmedValue) {
-            router.push(`/search/${encodeURIComponent(trimmedValue)}`); // Redirect to dynamic route
+            router.push(`/search/${encodeURIComponent(trimmedValue)}`); 
         }
     };
 

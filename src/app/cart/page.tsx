@@ -10,15 +10,14 @@ import FavouriteProduct from '../components/favourite';
 const Cart = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [subTotal, setSubTotal] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true); // Add loading state
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // Fetch cart data from localStorage
     const cart = JSON.parse(localStorage.getItem('cart') || '{}');
     const cartArray: Product[] = Object.values(cart);
 
     setProducts(cartArray);
-    setLoading(false); // Set loading to false after fetching data
+    setLoading(false);
 
     const total = cartArray.reduce((acc: number, product: Product) => {
       return acc + product.price * product.quantity;
@@ -27,7 +26,6 @@ const Cart = () => {
     setSubTotal(total);
   }, []);
 
-  // Sync localStorage whenever the products state changes
   useEffect(() => {
     if (!loading) {
       localStorage.setItem('cart', JSON.stringify(products));
@@ -64,7 +62,7 @@ const Cart = () => {
       <h3 className="text-lg mx-4 my-5"><strong><u>Cart Details:</u></strong></h3>
       <div className="md:flex justify-between mt-5">
         {loading ? (
-          <p>Loading your cart...</p> // Show a loading message while fetching
+          <p>Loading your cart...</p> 
         ) : products.length === 0 ? (
           "Your Cart is empty..." // Display this only if products is empty
         ) : (

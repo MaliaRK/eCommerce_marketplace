@@ -2,8 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, } from '@/components/ui/carousel'
 
-
-
 const Hero = () => {
   return (
     <div className='mt-[10%] md:mt-[5%] mx-auto'>

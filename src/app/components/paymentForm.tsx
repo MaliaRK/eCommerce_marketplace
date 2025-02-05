@@ -26,7 +26,7 @@ export default function PaymentForm({subtotal}: {subtotal: number}) {
       } else {
         setErrorMessage(null);
         alert("Payment successful!"); 
-        setIsProcessing(false);
+        setIsProcessing(false); 
       }
     };
   

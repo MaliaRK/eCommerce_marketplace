@@ -35,20 +35,9 @@ const Header = () => {
           <SheetTrigger className='block md:hidden mr-2'>Menu</SheetTrigger>
           <SheetContent>
               <ul className='font-light'>
-                <Link href='./home'><li>Home</li></Link>
-                <li>New & Featured</li>
-                <Link href='./products'><li>Men</li></Link>
-                <Link href='./products'><li>Women</li></Link>
-                <li>Kids</li>
-                <li>Sale</li>
-                <li className='font-semibold'>SNKRS</li>
-                <Link href='./cart'><li>cart</li></Link>
-                <Link href='./checkout'><li>Checkout</li></Link>
-                <Link href='./contact'><li>Contact</li></Link>
-                <Link href='./products'><li>Products</li></Link>
-                <Link href='./productDetail'><li>Product Details</li></Link>
-                <Link href='./joinUs'><li>Join us</li></Link>
-                <Link href='./login'><li>Ligin</li></Link>
+                <Link href='/categories/newFeatures'><li>New & Featured</li></Link>
+                <Link href='/categories/mensShoes'><li>Men</li></Link>
+                <Link href='/categories/womensShoes'><li>Women</li></Link>
               </ul>
           </SheetContent>
         </Sheet>
