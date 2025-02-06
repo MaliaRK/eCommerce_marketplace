@@ -19,7 +19,7 @@ const NewFeatures = async () => {
   console.log(newFeatures);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mx-4">
       {newFeatures.filter(product => product.productName && product.image && product.slug)
       .map((product) => {
         return (

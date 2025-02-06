@@ -37,7 +37,7 @@ const ProductDetail = ({ product }: { product: Product }) => {
         height={300}
         className="mx-auto rounded-lg"
       />
-      <div className="mt-10 md:my-auto">
+      <div className="mt-10 md:my-auto mx-10">
         <h3 className="text-2xl">
           <strong>{product.productName}</strong>
         </h3>

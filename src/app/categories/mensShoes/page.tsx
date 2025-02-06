@@ -19,7 +19,7 @@ const MensProduct = async () => {
     console.log(mensProduct);
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mx-4">
             {mensProduct.map((product) => {
                 return (
                     <Link href={`/products/${product.slug}`} key={product.slug}>

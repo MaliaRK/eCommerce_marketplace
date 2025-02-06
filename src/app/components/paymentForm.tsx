@@ -32,11 +32,13 @@ export default function PaymentForm({subtotal}: {subtotal: number}) {
   
     return (
       <form onSubmit={handleSubmit}>
-        <h3>Order Summary</h3>
-        <p>Subtotal: ${subtotal.toFixed(2)}</p>
-        <PaymentElement />
+        <div className='m-4 bg-gray-200 px-2 py-1 rounded-sm'>
+          <h3>Order Summary:</h3>
+          <p>Subtotal: ${subtotal.toFixed(2)}</p>
+        </div>
+        <PaymentElement className='mx-4'/>
         <button type="submit" 
-        disabled={!stripe || isProcessing}>
+        disabled={!stripe || isProcessing} className='m-4 bg-gray-400 hover:bg-gray-300 px-2 py-1 rounded-sm'>
           {isProcessing ? "Processing..." : "Pay Now"}
         </button>
         {errorMessage && <div style={{ color: "red", marginTop: 8 }}>{errorMessage}</div>}

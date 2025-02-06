@@ -25,7 +25,7 @@ const FavouriteProduct = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mx-10">
       {favProduct.map((product) => (
         <Link href={`/products/${product.slug}`} key={product.slug}>
           <div>

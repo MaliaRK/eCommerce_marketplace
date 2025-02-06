@@ -124,12 +124,12 @@ const Cart = () => {
         </div>
       </div>
 
-      <div className="my-10">
+      <div className="my-10 mx-4">
         <h3><strong>Favourites</strong></h3>
         <p>There are no items saved to your favourites.</p>
       </div>
 
-      <h3>You Might Also Like</h3>
+      <h3 className='m-4'>You Might Also Like</h3>
       <FavouriteProduct/>
     </div>
   );

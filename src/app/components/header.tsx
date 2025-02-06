@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div className='max-w-[1440px] mx-auto'>
-      <div className='flex justify-between bg-[#cccccc] p-2 '>
+      <div className='flex justify-between bg-[#cccccc] py-1 md:p-2 '>
           <Image src='/human.png' alt='human' width={24} height={24}></Image>
           <ul className='flex items-center font-light'>
               <Link href='/'><li className='border-r-2 border-black px-1 md:px-2'>Home</li></Link>

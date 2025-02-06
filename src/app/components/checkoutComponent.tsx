@@ -43,7 +43,6 @@ const CheckoutComponent = () => {
 
   return (
     <div>
-      <h2>Checkout</h2>
       <Elements stripe={stripePromise} options={{ clientSecret }}>
         <PaymentForm subtotal={subtotal} />
       </Elements>
